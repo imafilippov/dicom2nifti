@@ -66,7 +66,7 @@ def convert_directory(dicom_directory, output_folder, compression=True, reorient
             # construct the filename for the nifti
             base_filename = ""
             if 'SeriesNumber' in dicom_input[0]:
-                base_filename = _remove_accents(f'ser-{dicom_input[0].SeriesNumber[:4]}')
+                base_filename = _remove_accents(f'ser-{dicom_input[0].SeriesNumber}')
                 if 'SeriesDate' in dicom_input[0]:
                     base_filename = (f'ses-{dicom_input[0].SeriesDate[:4]}-{dicom_input[0].SeriesDate[4:6]}-'
                                      f'{dicom_input[0].SeriesDate[6:8]}_{base_filename}')
